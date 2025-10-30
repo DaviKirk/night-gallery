@@ -32,7 +32,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #000000;
+    background-color: #0f0f0f;
 }
 .img-feed-section {
     column-count: 4;           
@@ -44,7 +44,7 @@ body{
 
 .img-feed-container {
     break-inside: avoid;   
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border-radius: 2px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -55,6 +55,12 @@ body{
     display: block;
     border-radius: 8px;
     object-fit: cover;
+    transition: 500ms;
+    cursor: pointer;
+}
+.img-feed:hover{
+    transform: scale(1.05);
+    transition: 500ms;
 }
 
 nav{
@@ -99,8 +105,47 @@ header{
     padding: 0.5rem 1rem;
     border-radius: 8px;  
     font-weight: bold;
+    cursor: pointer;
+}
+.input-form::file-selector-button:hover{
+    background-color: #ffa322;
+    transition: 200ms;
+    
 }
 .form-container{
     text-align: center;
     margin: 2rem auto;
+}
+.btn-form{
+    background-color: #ffc369;
+    border: none;
+    height: 5vh;
+    width: 5vw;
+    border-radius: 8px;  
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-form:hover{
+    background-color: #ffa322;
+    transition: 200ms;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px; 
+  height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #573f32; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #463329;
 }
