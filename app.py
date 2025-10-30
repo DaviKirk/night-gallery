@@ -6,6 +6,9 @@ from models.database import db, galleryPhoto
 
 app = Flask(__name__, template_folder='views')
 
+app.secret_key = "123"
+app.config['SECRET_KEY'] = "123"
+
 BD_NAME = 'photos_gallery'
 
 app.config['DATABASE_NAME'] = BD_NAME
@@ -15,7 +18,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 FILE_TYPES = set(['png', 'jpg', 'jpeg', 'gif'])
 def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].upper() in FILE_TYPES
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in FILE_TYPES
 
 @app.route('/', methods=['GET', 'POST'])
 def gallery():
@@ -38,7 +41,7 @@ def gallery():
         flash('Foto enviada com sucesso!', 'success')
         return redirect(url_for('gallery'))
     
-    return render_template('index.html')
+    return render_template('index.html', photos=photos)
 
 if __name__ == '__main__':
     
