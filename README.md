@@ -28,6 +28,7 @@
 ```bash
   pip install flask
   pip install sqlalchemy
+  pip install pymysql
  ```
 4. **Start MySQL with XAMPP:**
 
