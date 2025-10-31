@@ -71,13 +71,31 @@ nav{
 .logo{
     color: #ffcd44;
     font-size: 2rem;
+    width: fit-content;
+    cursor: pointer;
+    user-select: none;
 }
+.logo:hover{
+    animation: blink-logo 1s;
+    transition: 200ms;
+}
+
+@keyframes blink-logo {
+    0% { color: #ffcd44; }
+    30% { color: #7c7c7c; }
+    50% { color: #ffcd44; }
+    65% { color: #7c7c7c; }
+    100% { color: #ffcd44; }
+    
+}
+
 .tittle-header{
     color: #ffffff;
-    
+    user-select: none;
 }
 .sub-tittle-header{
     color: #ffffff;
+    user-select: none;
 }
 header{
     text-align: center;
